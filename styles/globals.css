@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Astera';
+  src: url('/font/astera.ttf') format('ttf');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.font-astera {
+  font-family: Astera;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: bold;
+}
+h2 {
+  font-size: clamp(1rem, 1vw, 1rem);
+}
+h3 {
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 700;
+}
+h4 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.abs-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
