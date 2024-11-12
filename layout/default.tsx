@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className='h-screen overflow-hidden flex'>
+    <div className='h-screen flex'>
       {children}
       <NavBar />
     </div>

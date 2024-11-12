@@ -54,8 +54,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='w-[95vw] shadow-right z-20'>
-      <div className='h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 p-4'>
+    <div className='w-[95vw] shadow-right z-20 overflow-y-scroll px-4'>
+      <div className='h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 py-4'>
         <div className='h-full flex flex-col justify-start items-start gap-8'>
           <div className='overflow-hidden'>
             <h1 className='title-anim font-astera text-4xl text-strock text-white'>
@@ -97,6 +97,7 @@ export default function Home() {
           image='/images/autres.webp'
         />
       </div>
+      <div className="h-screen bg-black rounded-3xl py-4"></div>
     </div>
   );
 }
