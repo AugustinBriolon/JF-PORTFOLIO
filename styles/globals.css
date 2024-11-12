@@ -10,33 +10,32 @@
 
 @font-face {
   font-family: 'Astera';
-  src: url('/font/astera.ttf') format('ttf');
+  src: url('/font/Astera.woff2') format('woff2'),
+      url('/font/Astera.woff') format('woff');
   font-weight: normal;
-  font-display: swap;
   font-style: normal;
+  font-display: swap;
 }
 
 .font-astera {
   font-family: Astera;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 5vw, 6rem);
-  font-weight: bold;
+.text-strock {
+  -webkit-text-stroke: .05em theme(colors.blue)
 }
-h2 {
-  font-size: clamp(1rem, 1vw, 1rem);
+
+.dark-fill {
+  filter: invert(1) grayscale(100%) brightness(1.5);
 }
-h3 {
-  font-size: clamp(2rem, 2vw, 2rem);
-  font-weight: 700;
-}
-h4 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+
+.fill-shadow {
+  filter: drop-shadow(3px 0 1px rgba(0, 0, 0, 0.4));
 }
 
 .abs-center {
   position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
