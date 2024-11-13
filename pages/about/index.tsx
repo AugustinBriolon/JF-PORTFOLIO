@@ -1,7 +1,16 @@
+import Section from '@/components/Section';
+
 export default function About() {
   return (
-    <div className="w-[95vw] shadow-right z-20">
-      <p className='text-4xl text-blue font-astera'>About</p>
-    </div>
-  )
+    <Section>
+      <div className='h-full overflow-y-auto'>
+        <div className='min-h-screen'>
+          <p className='text-4xl text-blue font-astera'>About</p>
+        </div>
+        <div className='min-h-screen'>
+          <p className='text-4xl text-blue font-astera'>About</p>
+        </div>
+      </div>
+    </Section>
+  );
 }

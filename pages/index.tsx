@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import Button from '@/components/Button';
 import HomeCard from '@/components/HomeCard';
+import Section from '@/components/Section';
 
 export default function Home() {
   const aboutText =
@@ -26,16 +27,24 @@ export default function Home() {
         },
         '<'
       )
-      .from('.btn-anim div.target', {
-        yPercent: 100,
-        duration: 0.8,
-        ease: 'power2.out',
-      }, '<')
-      .from('.btn-anim p', {
-        y: 100,
-        duration: 0.8,
-        ease: 'power2.out',
-      }, '<')
+      .from(
+        '.btn-anim div.target',
+        {
+          yPercent: 100,
+          duration: 0.8,
+          ease: 'power2.out',
+        },
+        '<'
+      )
+      .from(
+        '.btn-anim p',
+        {
+          y: 100,
+          duration: 0.8,
+          ease: 'power2.out',
+        },
+        '<'
+      )
       .from(
         '.card-anim',
         {
@@ -54,8 +63,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='w-[95vw] shadow-right z-20 overflow-y-scroll px-4'>
-      <div className='h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 py-4'>
+    <Section>
+      <div className='h-full w-full grid grid-cols-2 grid-rows-2 gap-8 p-4'>
         <div className='h-full flex flex-col justify-start items-start gap-8'>
           <div className='overflow-hidden'>
             <h1 className='title-anim font-astera text-4xl text-strock text-white'>
@@ -97,7 +106,7 @@ export default function Home() {
           image='/images/autres.webp'
         />
       </div>
-      <div className="h-screen bg-black rounded-3xl py-4"></div>
-    </div>
+      <div className='h-screen bg-black rounded-3xl py-4'></div>
+    </Section>
   );
 }

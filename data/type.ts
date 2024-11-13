@@ -10,3 +10,8 @@ export interface HomeCardType {
   image: string;
   className?: string;
 }
+
+export interface SectionProps {
+  children: React.ReactNode;
+  className?: string;
+}

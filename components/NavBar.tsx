@@ -42,7 +42,7 @@ export default function NavBar() {
       <div className='overflow-hidden w-full'>
         <Link
           href='/'
-          className='link-anim relative w-full flex items-center justify-center py-2 px-1 mt-8'
+          className='link-anim relative w-full flex items-center justify-center py-2 px-1'
         >
           <Image
             src='/images/logo.webp'

@@ -10,8 +10,9 @@
 
 @font-face {
   font-family: 'Astera';
-  src: url('/font/Astera.woff2') format('woff2'),
-      url('/font/Astera.woff') format('woff');
+  src:
+    url('/font/Astera.woff2') format('woff2'),
+    url('/font/Astera.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -21,8 +22,13 @@
   font-family: Astera;
 }
 
+.noscrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .text-strock {
-  -webkit-text-stroke: .05em theme(colors.blue)
+  -webkit-text-stroke: 0.05em theme(colors.blue);
 }
 
 .dark-fill {
@@ -30,7 +36,7 @@
 }
 
 .fill-shadow {
-  filter: drop-shadow(3px 0 1px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.4));
 }
 
 .abs-center {
@@ -38,4 +44,25 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-smooth-stopped {
+  overflow: hidden;
+}
+
+.lenis-smooth-scrolling iframe {
+  pointer-events: none;
 }
