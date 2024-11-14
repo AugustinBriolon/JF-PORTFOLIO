@@ -45,24 +45,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis-smooth-stopped {
-  overflow: hidden;
-}
-
-.lenis-smooth-scrolling iframe {
-  pointer-events: none;
-}

@@ -38,11 +38,11 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className='w-[8vw] h-screen min-h-96 flex flex-col gap-2 items-start justify-between '>
-      <div className='overflow-hidden flex w-full min-h-16'>
+    <nav className='w-screen md:w-[8vw] h-fit md:h-screen md:min-h-96 flex md:flex-col gap-2 items-start justify-between '>
+      <div className='overflow-hidden flex md:w-full min-h-16'>
         <Link
           href='/'
-          className='link-anim relative w-full h-fit flex items-center justify-center py-2 px-1'
+          className='link-anim relative w-full h-fit flex items-center justify-center p-2'
         >
           <Image
             src='/images/logo.webp'
@@ -53,24 +53,24 @@ export default function NavBar() {
           />
         </Link>
       </div>
-      <div className='flex flex-col w-full'>
-        <div className='overflow-hidden flex'>
+      <div className='flex md:flex-col justify-between w-full'>
+        <div className='overflow-hidden flex w-full'>
           <Link
             href='/projects'
             className={clsx(
-              'link-anim relative mr-6 max-h-72 h-full',
+              'link-anim relative md:mr-6 max-h-20 md:max-h-72 md:h-full w-full',
               pathname === '/projects' ? 'z-30' : 'z-10'
             )}
             onMouseEnter={animateOnHover}
             onMouseLeave={animateOnLeave}
           >
             <div className='z-10 w-fit abs-center'>
-              <p className='rotate-90 text-xl font-astera'>Projects</p>
+              <p className='md:rotate-90 text-xl font-astera'>Projects</p>
             </div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 40 190.92'
-              className='dark-fill fill-shadow w-full max-w-20 h-full'
+              className='-rotate-90 md:rotate-0 dark-fill fill-shadow w-full md:max-w-20 h-full'
             >
               <g>
                 <path
@@ -81,23 +81,23 @@ export default function NavBar() {
             </svg>
           </Link>
         </div>
-        <div className='overflow-hidden flex'>
+        <div className='overflow-hidden flex w-full'>
           <Link
             href='/about'
             className={clsx(
-              'link-anim relative mr-6 max-h-72 h-full',
+              'link-anim relative md:mr-6 max-h-20 md:max-h-72 md:h-full w-full',
               pathname === '/about' ? 'z-30' : 'z-10'
             )}
             onMouseEnter={animateOnHover}
             onMouseLeave={animateOnLeave}
           >
             <div className='z-10 abs-center'>
-              <p className='rotate-90 text-xl font-astera text-nowrap'>ABOUT</p>
+              <p className='md:rotate-90 text-xl font-astera text-nowrap'>ABOUT</p>
             </div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 40 190.92'
-              className='dark-fill fill-shadow w-full max-w-20 h-full'
+              className='-rotate-90 md:rotate-0 dark-fill fill-shadow w-full mdmax-w-20 h-full'
             >
               <g>
                 <path

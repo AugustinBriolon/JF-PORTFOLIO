@@ -3,17 +3,11 @@ import { fetchProjects } from '@/services/projects.sevices';
 
 export default function Projects() {
   return (
-    <Section className='p-4'>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
-        <p className='text-9xl'>Ceci est un test</p>
+    <Section className='h-screen'>
+      <div className='flex flex-col md:flex-col-reverse'>
+        <p>Ceci est un test</p>
+        <p>Ceci est un test</p>
+      </div>
     </Section>
   );
 }
