@@ -3,8 +3,11 @@ import { gsap } from 'gsap';
 import Button from '@/components/Button';
 import HomeCard from '@/components/HomeCard';
 import Section from '@/components/Section';
+import { fetchProjects } from '@/services/projects.sevices';
+import { ProjectType } from '@/data/type';
+import ProjectsView from '@/components/ProjectsView';
 
-export default function Home() {
+export default function Home({ projects }: { projects: ProjectType[] }) {
   const aboutText =
     "Passionné par le mariage de l'art et de la mode, je suis un jeune designer fraîchement diplômé, prêt à révolutionner le monde du prêt-à-porter avec mes créations uniques. Découvrez mon univers où chaque pièce raconte une histoire.".split(
       ' '
@@ -64,7 +67,7 @@ export default function Home() {
 
   return (
     <Section>
-      <div className='h-full w-full grid grid-cols-2 grid-rows-2 gap-8 p-4'>
+      <div className='h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 p-4'>
         <div className='h-full flex flex-col justify-start items-start gap-8'>
           <div className='overflow-hidden'>
             <h1 className='title-anim font-astera text-4xl text-strock text-white'>
@@ -106,7 +109,21 @@ export default function Home() {
           image='/images/autres.webp'
         />
       </div>
-      <div className='h-screen bg-black rounded-3xl py-4'></div>
+      <div className='h-screen p-4'>
+        <div className='bg-black rounded-3xl h-full'>
+          <ProjectsView projects={projects} />
+        </div>
+      </div>
     </Section>
   );
+}
+
+export async function getStaticProps() {
+  const projects = await fetchProjects();
+
+  return {
+    props: {
+      projects,
+    },
+  };
 }

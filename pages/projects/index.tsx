@@ -1,4 +1,5 @@
 import Section from '@/components/Section';
+import { fetchProjects } from '@/services/projects.sevices';
 
 export default function Projects() {
   return (
@@ -15,4 +16,14 @@ export default function Projects() {
         <p className='text-9xl'>Ceci est un test</p>
     </Section>
   );
+}
+
+export async function getStaticProps() {
+  const projects = await fetchProjects();
+
+  return {
+    props: {
+      projects,
+    },
+  };
 }
