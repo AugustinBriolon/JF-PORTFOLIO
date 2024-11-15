@@ -66,8 +66,8 @@ export default function Home({ projects }: { projects: ProjectType[] }) {
   }, []);
 
   return (
-    <Section className='h-screen'>
-      <div className='h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 p-4'>
+    <Section className='h-full md:h-screen'>
+      <div className='h-full md:h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 p-2 md:p-4'>
         <div className='h-full flex flex-col justify-start items-start gap-8'>
           <div className='overflow-hidden'>
             <h1 className='title-anim font-astera text-4xl text-strock text-white'>
@@ -109,7 +109,7 @@ export default function Home({ projects }: { projects: ProjectType[] }) {
           image='/images/autres.webp'
         />
       </div>
-      <div className='h-screen p-4'>
+      <div className='h-full md:h-screen p-2 md:p-4'>
         <div className='bg-black rounded-3xl h-full'>
           <ProjectsView projects={projects} />
         </div>

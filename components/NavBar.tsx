@@ -40,7 +40,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className='w-screen md:w-[8vw] h-fit md:h-screen md:min-h-96 flex md:flex-col items-start justify-between overflow-hidden'>
+    <nav className='w-screen md:w-[8vw] hfit md:h-screen md:min-h-96 flex md:flex-col items-start justify-between overflow-hidden'>
       <div className='overflow-hidden flex items-center justify-between h-full md:h-auto md:w-full md:min-h-16'>
         <Link
           href='/'
@@ -55,7 +55,7 @@ export default function NavBar() {
           />
         </Link>
       </div>
-      <div className='flex md:flex-col justify-between w-full mt-1 md:mt-0'>
+      <div className='flex md:flex-col items-end justify-between h-full md:h-fit w-full'>
         <div className='overflow-hidden flex w-full h-fit'>
           <Link
             href='/projects'
