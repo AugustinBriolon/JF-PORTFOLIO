@@ -25,6 +25,7 @@
 .noscrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .text-strock {
@@ -33,6 +34,10 @@
 
 .dark-fill {
   filter: invert(1) grayscale(100%) brightness(1.5);
+}
+
+.light-fill {
+  filter: invert(0) grayscale(100%) brightness(1.5);
 }
 
 .fill-shadow {

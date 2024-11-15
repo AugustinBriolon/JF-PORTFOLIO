@@ -19,6 +19,7 @@ export default function NavBar() {
   };
 
   const animateOnHover = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if(window.innerWidth < 768) return;
     gsap.to(e.currentTarget, {
       xPercent: -10,
       duration: 0.5,
@@ -26,6 +27,7 @@ export default function NavBar() {
     });
   };
   const animateOnLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if(window.innerWidth < 768) return;
     gsap.to(e.currentTarget, {
       xPercent: 0,
       duration: 0.5,
@@ -38,8 +40,8 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className='w-screen md:w-[8vw] h-fit md:h-screen md:min-h-96 flex md:flex-col gap-2 items-start justify-between '>
-      <div className='overflow-hidden flex md:w-full min-h-16'>
+    <nav className='w-screen md:w-[8vw] h-fit md:h-screen md:min-h-96 flex md:flex-col items-start justify-between overflow-hidden'>
+      <div className='overflow-hidden flex items-center justify-between h-full md:h-auto md:w-full md:min-h-16'>
         <Link
           href='/'
           className='link-anim relative w-full h-fit flex items-center justify-center p-2'
@@ -53,39 +55,29 @@ export default function NavBar() {
           />
         </Link>
       </div>
-      <div className='flex md:flex-col justify-between w-full'>
-        <div className='overflow-hidden flex w-full'>
+      <div className='flex md:flex-col justify-between w-full mt-1 md:mt-0'>
+        <div className='overflow-hidden flex w-full h-fit'>
           <Link
             href='/projects'
             className={clsx(
-              'link-anim relative md:mr-6 max-h-20 md:max-h-72 md:h-full w-full',
+              'link-anim relative max-h-20 md:max-h-72 md:h-full h-fit w-full md:w-auto mt-2 md:mt-0',
               pathname === '/projects' ? 'z-30' : 'z-10'
             )}
             onMouseEnter={animateOnHover}
             onMouseLeave={animateOnLeave}
           >
-            <div className='z-10 w-fit abs-center'>
-              <p className='md:rotate-90 text-xl font-astera'>Projects</p>
+            <div className='z-10 abs-center'>
+              <p className='md:rotate-90 text-xl font-astera text-nowrap'>PROJETS</p>
             </div>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 40 190.92'
-              className='-rotate-90 md:rotate-0 dark-fill fill-shadow w-full md:max-w-20 h-full'
-            >
-              <g>
-                <path
-                  fill='white'
-                  d='M30.8,16s-10.18-1.64-14-2.77C11.2,11.58,0,8.06,0,0V190.92c0-8.06,11.2-11.57,16.8-13.24,3.82-1.13,14-2.77,14-2.77C36.07,174.09,40,169,40,163V27.9C40,21.91,36.07,16.84,30.8,16Z'
-                ></path>
-              </g>
-            </svg>
+            <Image src='/icons/window-hoz.svg' alt='Logo' width={40} height={190.92} className='md:hidden fill-shadow light-fill w-full h-full' />
+            <Image src='/icons/window.svg' alt='Logo' height={40} width={190.92} className='hidden md:flex fill-shadow light-fill w-full h-full' />
           </Link>
         </div>
-        <div className='overflow-hidden flex w-full'>
+        <div className='overflow-hidden flex w-full h-fit'>
           <Link
             href='/about'
             className={clsx(
-              'link-anim relative md:mr-6 max-h-20 md:max-h-72 md:h-full w-full',
+              'link-anim relative max-h-20 md:max-h-72 md:h-full h-fit w-full md:w-auto mt-2 md:mt-0',
               pathname === '/about' ? 'z-30' : 'z-10'
             )}
             onMouseEnter={animateOnHover}
@@ -94,20 +86,11 @@ export default function NavBar() {
             <div className='z-10 abs-center'>
               <p className='md:rotate-90 text-xl font-astera text-nowrap'>ABOUT</p>
             </div>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 40 190.92'
-              className='-rotate-90 md:rotate-0 dark-fill fill-shadow w-full mdmax-w-20 h-full'
-            >
-              <g>
-                <path
-                  fill='white'
-                  d='M30.8,16s-10.18-1.64-14-2.77C11.2,11.58,0,8.06,0,0V190.92c0-8.06,11.2-11.57,16.8-13.24,3.82-1.13,14-2.77,14-2.77C36.07,174.09,40,169,40,163V27.9C40,21.91,36.07,16.84,30.8,16Z'
-                ></path>
-              </g>
-            </svg>
+            <Image src='/icons/window-hoz.svg' alt='Logo' width={40} height={190.92} className='md:hidden fill-shadow light-fill w-full h-full' />
+            <Image src='/icons/window.svg' alt='Logo' height={40} width={190.92} className='hidden md:flex fill-shadow light-fill w-full h-full' />
           </Link>
         </div>
+  
       </div>
     </nav>
   );

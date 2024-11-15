@@ -66,7 +66,7 @@ export default function Home({ projects }: { projects: ProjectType[] }) {
   }, []);
 
   return (
-    <Section>
+    <Section className='h-screen'>
       <div className='h-screen w-full grid grid-cols-2 grid-rows-2 gap-8 p-4'>
         <div className='h-full flex flex-col justify-start items-start gap-8'>
           <div className='overflow-hidden'>
