@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { TypeProject } from '@/data/type';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +67,7 @@ export default function ProjectsView({
       >
         <div className='flex gap-8 min-w-max'>
           {projects.map((project, index) => (
-            <div key={index} className='flex flex-col items-start gap-4 group'>
+            <Link key={index} className='flex flex-col items-start gap-4 group' href={`/projects/${project.slug.current}`}>
               <div className='w-96 h-96 aspect-square bg-white rounded-lg overflow-hidden'>
                 <Image
                   src={urlFor(project.mainImage).toString()}
@@ -87,7 +88,7 @@ export default function ProjectsView({
                   <ArrowUpRight size={24} />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

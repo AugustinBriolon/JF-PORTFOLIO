@@ -9,7 +9,6 @@ export const fetchProject = async (params: ParsedUrlQuery | undefined) => {
       projectIndex,
       publishedAt,
       description,
-      story,
       mainImage,
       gallery,
       type,

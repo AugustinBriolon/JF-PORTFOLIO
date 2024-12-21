@@ -1,4 +1,4 @@
-import { Image, Slug, TypedObject } from "sanity";
+import { Image, Slug } from "sanity";
 
 export interface ButtonType {
   name: string;
@@ -28,7 +28,6 @@ export type TypeProject = {
   projectIndex: number;
   publishedAt: string;
   description: string;
-  story: TypedObject[];
   mainImage: Image;
   gallery: Image[];
   type: string;
