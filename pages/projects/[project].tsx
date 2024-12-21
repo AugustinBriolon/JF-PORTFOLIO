@@ -1,26 +1,23 @@
+import Section from '@/components/Section';
 import { TypeProject, TypePaths } from '@/data/type';
 import { fetchPaths } from '@/services/path.services';
 import { fetchProject } from '@/services/project.sevices';
-import { fetchProjects } from '@/services/projects.sevices';
 import { GetStaticPropsContext } from 'next';
 
 export default function Page({
   project,
-  projects,
   paths,
 }: {
   project: TypeProject;
-  projects: TypeProject[];
   paths: TypePaths[];
 }) {
   console.log(project);
-  console.log(projects);
   console.log(paths);
 
   return (
-    <div>
-      <p>Ceci est un test</p>
-    </div>
+    <Section className='h-screenp p-2 md:p-4'>
+        <h1>{project.title}</h1>
+    </Section>
   );
 }
 
@@ -29,21 +26,11 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   const paths = await fetchPaths();
   const project = await fetchProject(params);
-  const projects = await fetchProjects();
-
-  const projectIndex = projects.findIndex(
-    (p: TypeProject) => p.slug.current === project.slug.current
-  );
-  const filteredProjects = [
-    projects[(projectIndex + 1) % projects.length],
-    projects[(projectIndex - 1 + projects.length) % projects.length],
-  ];
 
   return {
     props: {
       paths,
       project: project || null,
-      projects: filteredProjects,
     },
   };
 };

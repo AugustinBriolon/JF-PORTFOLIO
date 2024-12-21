@@ -85,19 +85,19 @@ export default function Home({ projects }: { projects: TypeProject[] }) {
         <HomeCard
           className='card-anim'
           title='Pro'
-          link='/projects'
+          link='/projects/pro'
           image='/images/pro.webp'
         />
         <HomeCard
           className='card-anim'
           title='Perso'
-          link='/projects'
+          link='/projects/perso'
           image='/images/perso.webp'
         />
         <HomeCard
           className='card-anim'
           title='Autres'
-          link='/projects'
+          link='/projects/autre'
           image='/images/autres.webp'
         />
       </div>
