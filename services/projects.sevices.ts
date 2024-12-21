@@ -9,9 +9,7 @@ export const fetchProjects = async () => {
       mainImage,
       description,
       publishedAt,
-      "types": types[]->{
-        title,
-      },
+      type,
     }`;
 
   const projects = await client.fetch(query);

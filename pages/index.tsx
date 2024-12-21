@@ -4,10 +4,10 @@ import Button from '@/components/Button';
 import HomeCard from '@/components/HomeCard';
 import Section from '@/components/Section';
 import { fetchProjects } from '@/services/projects.sevices';
-import { ProjectType } from '@/data/type';
+import { TypeProject } from '@/data/type';
 import ProjectsView from '@/components/ProjectsView';
 
-export default function Home({ projects }: { projects: ProjectType[] }) {
+export default function Home({ projects }: { projects: TypeProject[] }) {
   const aboutText =
     "Passionné par le mariage de l'art et de la mode, je suis un jeune designer fraîchement diplômé, prêt à révolutionner le monde du prêt-à-porter avec mes créations uniques. Découvrez mon univers où chaque pièce raconte une histoire.".split(
       ' '
@@ -31,19 +31,11 @@ export default function Home({ projects }: { projects: ProjectType[] }) {
         '<'
       )
       .from(
-        '.btn-anim div.target',
+        '.btn-anim div',
         {
           yPercent: 100,
           duration: 0.8,
-          ease: 'power2.out',
-        },
-        '<'
-      )
-      .from(
-        '.btn-anim p',
-        {
-          y: 100,
-          duration: 0.8,
+          stagger: 0.1,
           ease: 'power2.out',
         },
         '<'

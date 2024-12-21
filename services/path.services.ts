@@ -1,5 +1,5 @@
 
-import { ProjectType } from '@/data/type';
+import { TypeProject } from '@/data/type';
 import { client } from '@/sanity/lib/client';
 
 export const fetchPaths = async () => {
@@ -11,7 +11,7 @@ export const fetchPaths = async () => {
 
   const projects = await client.fetch(query);
 
-  const paths = projects.map((project: ProjectType) => ({
+  const paths = projects.map((project: TypeProject) => ({
     slug: project.slug,
   }));
 

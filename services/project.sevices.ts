@@ -12,9 +12,7 @@ export const fetchProject = async (params: ParsedUrlQuery | undefined) => {
       story,
       mainImage,
       gallery,
-      "types": types[]->{
-        title
-      },
+      type,
     }
   `;
 

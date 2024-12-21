@@ -51,7 +51,7 @@ export default function NavBar() {
             alt='Logo'
             width={560}
             height={352}
-            className='max-w-20 w-full'
+            className='max-w-20 w-full hover:scale-105 transform transition-transform duration-300'
           />
         </Link>
       </div>

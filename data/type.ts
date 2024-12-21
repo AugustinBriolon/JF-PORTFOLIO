@@ -19,10 +19,10 @@ export interface SectionProps {
 }
 
 export interface ProjectsViewProps {
-  projects: ProjectType[];
+  projects: TypeProject[];
 }
 
-export type ProjectType = {
+export type TypeProject = {
   title: string;
   slug: Slug;
   projectIndex: number;
@@ -31,9 +31,10 @@ export type ProjectType = {
   story: TypedObject[];
   mainImage: Image;
   gallery: Image[];
-  types: TypesType[];
+  type: string;
 };
 
-export type TypesType = {
+export type TypePaths = {
+  slug: string;
   title: string;
 };

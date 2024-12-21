@@ -1,7 +1,7 @@
 import { ProjectsIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
 
-export const projectType = defineType({
+export const TypeProject = defineType({
   name: 'projects',
   title: 'Project',
   type: 'document',
@@ -52,10 +52,6 @@ export const projectType = defineType({
       type: 'text',
     }),
     defineField({
-      name: 'story',
-      type: 'blockContent',
-    }),
-    defineField({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
@@ -74,10 +70,13 @@ export const projectType = defineType({
       },
     }),
     defineField({
-      name: 'types',
-      title: 'Types',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'category' }] }],
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+      options: {
+        list: ['perso', 'pro', 'autre'],
+      },
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });
