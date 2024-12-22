@@ -79,7 +79,7 @@ export default function Home({ projects }: { projects: TypeProject[] }) {
             </p>
           </div>
           <div className='overflow-hidden'>
-            <Button name='Me contacter' icon className='btn-anim' />
+            <Button name='Me contacter' icon className='btn-anim' href='mailto:jf1607@gmail.com' />
           </div>
         </div>
         <HomeCard

@@ -11,8 +11,8 @@ const createLetterSpans = (text: string) => {
   ));
 };
 
-export default function Button({ name, icon, className }: ButtonType) {
-  const containerRef = useRef<HTMLDivElement>(null);
+export default function Button({ name, icon, className, href }: ButtonType) {
+  const containerRef = useRef<HTMLAnchorElement>(null);
   const textTopRef = useRef<HTMLDivElement>(null);
   const textBottomRef = useRef<HTMLDivElement>(null);
 
@@ -52,9 +52,10 @@ export default function Button({ name, icon, className }: ButtonType) {
   }, [name]);
 
   return (
-    <div
+    <a
       ref={containerRef}
-      className={`border border-black rounded-xl flex items-center justify-between gap-4 w-fit px-4 py-2 cursor-pointer ${className}`}
+      href={href}
+      className={`border border-black rounded-xl flex items-center justify-between gap-4 w-fit px-4 py-2 cursor-none ${className}`}
     >
       <div className="overflow-hidden relative">
         <div ref={textTopRef} className="min-w-20">
@@ -74,6 +75,6 @@ export default function Button({ name, icon, className }: ButtonType) {
           <ArrowUpRight className="w-full h-full text-white" />
         </div>
       )}
-    </div>
+    </a>
   );
 }

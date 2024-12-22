@@ -2,6 +2,7 @@ import { Image, Slug } from "sanity";
 
 export interface ButtonType {
   name: string;
+  href: string;
   icon?: boolean;
   className?: string;
 }

@@ -1,12 +1,9 @@
-import Image from 'next/image';
-import { urlFor } from '@/sanity/lib/image';
-import { ArrowUpRight } from 'lucide-react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { TypeProject } from '@/data/type';
-import { useRef } from 'react';
-import Link from 'next/link';
+import ProjectCard from './ProjectCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +43,9 @@ export default function ProjectsView({
 
   return (
     <div className='h-full w-full flex flex-col items-start justify-center gap-8 px-4 py-4'>
-      <h2 className='text-5xl text-blue font-astera'>{title ? title : 'Mes derniers projets'}</h2>
+      <h2 className='text-5xl text-blue font-astera'>
+        {title ? title : 'Mes derniers projets'}
+      </h2>
 
       <div className='w-full flex justify-between items-center gap-2 text-blue'>
         <p className='font-astera text-4xl'>01</p>
@@ -67,28 +66,7 @@ export default function ProjectsView({
       >
         <div className='flex gap-8 min-w-max'>
           {projects.map((project, index) => (
-            <Link key={index} className='flex flex-col items-start gap-4 group' href={`/projects/${project.slug.current}`}>
-              <div className='w-96 h-96 aspect-square bg-white rounded-lg overflow-hidden'>
-                <Image
-                  src={urlFor(project.mainImage).toString()}
-                  alt={project.title}
-                  height={1350}
-                  width={1080}
-                  className='rounded-lg object-cover group-hover:scale-105 transition-all duration-500'
-                />
-              </div>
-              <div className='w-full flex items-center justify-between gap-2'>
-                <div className='flex items-center gap-2'>
-                  <p className='text-4xl font-astera text-blue'>{index + 1}.</p>
-                  <h3 className='text-2xl text-blue uppercase'>
-                    {project.title}
-                  </h3>
-                </div>
-                <div className='flex items-center justify-center p-1 border border-blue rounded-full text-blue'>
-                  <ArrowUpRight size={24} />
-                </div>
-              </div>
-            </Link>
+            <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
       </div>

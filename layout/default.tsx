@@ -5,7 +5,7 @@ import CustomCursor from '@/components/CustomCursor';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className='flex flex-col-reverse md:flex-row h-screen w-screen'>
+    <div className='flex flex-col-reverse md:flex-row h-screen w-screen cursor-none'>
       {children}
       <NavBar />
       <CustomCursor />
