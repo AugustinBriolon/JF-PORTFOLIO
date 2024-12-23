@@ -10,6 +10,14 @@ export default function NavBar() {
 
   const timelineAnimation = () => {
     const tl = gsap.timeline();
+    if(window.innerWidth < 768) {
+      return tl.from('.link-anim', {
+        duration: 1,
+        yPercent: 100,
+        stagger: 0.2,
+        ease: 'power2.out',
+      });
+    }
     tl.from('.link-anim', {
       duration: 1,
       xPercent: -100,
@@ -69,7 +77,7 @@ export default function NavBar() {
             <div className='z-10 abs-center'>
               <p className='md:rotate-90 text-xl font-astera text-nowrap'>PROJETS</p>
             </div>
-            <Image src='/icons/window-hoz.svg' alt='Logo' width={40} height={190.92} className='md:hidden fill-shadow light-fill w-full h-full' />
+            <Image src='/icons/window-hoz.svg' alt='Logo' width={41} height={190} className='md:hidden fill-shadow light-fill w-full h-full' />
             <Image src='/icons/window.svg' alt='Logo' height={40} width={190.92} className='hidden md:flex fill-shadow light-fill w-full h-full' />
           </Link>
         </div>

@@ -8,7 +8,6 @@ import { fetchProject } from '@/services/project.sevices';
 import { TypeProject } from '@/data/type';
 import Section from '@/components/Section';
 
-
 export default function Page({ project }: { project: TypeProject }) {
   const aboutText = project.description.split(' ');
 
@@ -77,7 +76,42 @@ export default function Page({ project }: { project: TypeProject }) {
   }, []);
 
   return (
-    <Section className='h-screen p-2 md:p-4 flex flex-col-reverse md:flex-row justify-center items-center gap-4'>
+    <Section className='h-screen p-2 md:p-4 flex flex-col md:flex-row justify-start md:justify-center items-center gap-4'>
+      <div className='w-full h-fit md:h-full flex flex-col justify-start items-start gap-8'>
+        <div className='overflow-hidden'>
+          <h1 className='text-5xl text-blue font-bold font-astera title-project'>
+            {project.title}
+          </h1>
+        </div>
+        <div className='flex flex-col gap-2'>
+          <div className='overflow-hidden'>
+            <h2 className='text-blue text-3xl font-bold uppercase subtitle-project'>
+              Description
+            </h2>
+          </div>
+          <p>
+            {aboutText.map((word, index) => (
+              <span key={index} className='inline-block overflow-hidden'>
+                <span className='anim-text inline-block'>
+                  {word}
+                  {index !== aboutText.length - 1 && '\u00A0'}
+                </span>
+              </span>
+            ))}
+          </p>
+        </div>
+        <div className='flex flex-col gap-2'>
+          <div className='overflow-hidden'>
+            <h2 className='text-blue text-3xl font-bold uppercase subtitle-project-2'>
+              Infos Bonus
+            </h2>
+          </div>
+          <p></p>
+        </div>
+      </div>
+
+      <div className='separator-project hidden md:block w-1 h-full bg-blue rounded-full origin-top'></div>
+
       <div className='w-full md:overflow-hidden h-fit md:h-full'>
         <div className='image-container flex flex-col items-start md:overflow-scroll noscrollbar h-fit md:h-full'>
           <ul className='w-full h-fit max-w-screen-lg flex flex-wrap gap-2'>
@@ -109,41 +143,6 @@ export default function Page({ project }: { project: TypeProject }) {
                   )
               )}
           </ul>
-        </div>
-      </div>
-
-      <div className='separator-project hidden md:block w-1 h-full bg-blue rounded-full origin-top'></div>
-
-      <div className='w-full h-full flex flex-col justify-start items-start gap-8'>
-        <div className='overflow-hidden'>
-          <h1 className='text-5xl text-blue font-bold font-astera title-project'>
-            {project.title}
-          </h1>
-        </div>
-        <div className='flex flex-col gap-2'>
-          <div className='overflow-hidden'>
-            <h2 className='text-blue text-3xl font-bold uppercase subtitle-project'>
-              Description
-            </h2>
-          </div>
-          <p>
-            {aboutText.map((word, index) => (
-              <span key={index} className='inline-block overflow-hidden'>
-                <span className='anim-text inline-block'>
-                  {word}
-                  {index !== aboutText.length - 1 && '\u00A0'}
-                </span>
-              </span>
-            ))}
-          </p>
-        </div>
-        <div className='flex flex-col gap-2'>
-          <div className='overflow-hidden'>
-            <h2 className='text-blue text-3xl font-bold uppercase subtitle-project-2'>
-              Infos Bonus
-            </h2>
-          </div>
-          <p></p>
         </div>
       </div>
     </Section>
